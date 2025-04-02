@@ -1,23 +1,37 @@
-# Marmiton
+# Plugin WebRadio
 
-This plugin is an add-on for the [Avatar](https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Server) framework.
+![image desc](./webradio/assets/images/radioAva.png)
 
-![Marmiton](../../core/plugins/marmiton/assets/images/marmiton.png =150x*)
+![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-marmiton)
+![GitHub Release](https://img.shields.io/badge/version-1.1.0-green)
+![GitHub Release Date](https://img.shields.io/badge/Release_Date-02_avril_2025-yellow)
+![GitHub License](https://img.shields.io/github/license/Domodom30/A.V.A.T.A.R-plugin-marmiton)
 
-## ★ Key Features
-The marmiton plugin offers:
+### ✨ Fonctionnalité
+Le plugin marmiton est plugin pour le framework [A.V.A.T.A.R](https://github.com/Avatar-Home-Automation).
+Il vous permettra de rechercher et d'afficher vos recette via marmiton.
 
-- Search for a recipe
-- Select the number of people
-- Display the recipe to a client.
-- View other recipes matching your search.
-- Change the proportions.
+- Rechercher une recette
+- Sélectionner le nombre de personnes
+- Afficher la recette sur un client.
+- Voir les autres recettes correspondantes à votre recherche.
+- Modifier les proportions.
 
-## ★★ Example
-Avatar will then ask you which recipe to search for.
-Say: "Tartiflette"
+## ★★ Exemple
 
-Avatar will ask you for the number of servings.
-Say: "For 4 people"
+- Avatar va alors vous demander quelle recette rechercher.
+- Dites : "Tartiflette"
+- Avatar vous demandera pour combien de personnes.
+- Dites : "Pour 4 personnes"
+- Avatar vous proposera ensuite d'afficher la recette.
 
-Avatar will then offer to display the recipe.
+
+## Installation
+
+marmiton requires [Avatar Server](https://github.com/Avatar-Home-Automation) v5.0.0+ to run.
+
+Installation.
+
+```sh
+ 1. Trouvez ce plugin dans la bibliothèque de plugins A.V.A.T.A.R et cliquez sur `installer`.
+```
