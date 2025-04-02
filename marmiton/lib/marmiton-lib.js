@@ -23,10 +23,10 @@ async function scrapeRecipeList(keyword) {
    if (!itemList) return;
 
    return itemList.itemListElement.map((item) => ({
-      url: item.url,
-      image: cleanImageUrl(item.image.pictureUrls.origin) || null,
-      thumb: cleanImageUrl(item.image.pictureUrls.thumb) || null,
-      position: item.position,
+      url: item.url || null,
+      image: cleanImageUrl(item.image?.pictureUrls?.origin) || null,
+      thumb: cleanImageUrl(item.image?.pictureUrls?.thumb) || null,
+      position: item.position ?? null,
    }));
 }
 
@@ -216,8 +216,16 @@ async function calculRecettesNbPerson(recettes, nbperson) {
    });
 }
 
+// Il faudra verifier cela ulterieurement
 function cleanImageUrl(url) {
-   return url.replace(/(_origin)[^\.]*(\.\w{3,4})$/, '$1$2');
+   if (typeof url !== 'string' || !url.trim()) return null;
+
+   const match = url.match(/(_origin)[^\.]*(\.\w{3,4})(\?.*)?$/);
+   if (match) {
+      return url.replace(/(_origin)[^\.]*(\.\w{3,4})(\?.*)?$/, '$1$2');
+   }
+   if (url.startsWith('http')) return url;
+   return null;
 }
 
 function formatDuration(iso) {

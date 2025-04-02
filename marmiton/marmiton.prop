@@ -10,7 +10,7 @@
                "height": 300
             },
             "search": {
-               "limit": 4,
+               "limit": 2,
                "nbperson": 4
             }
          },
@@ -23,7 +23,7 @@
          "rules": {
             "search": [
                "(search|research|seek) * recipe",
-               "(search|research|seek) * /marmiton/"
+               "(search|research|seek) recipe"
             ],
             "close": [
                "(close) * window /marmiton/"
