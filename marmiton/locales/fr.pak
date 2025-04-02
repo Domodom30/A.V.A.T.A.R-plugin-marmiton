@@ -1,0 +1,31 @@
+{
+   "label": {
+      "title": "Marmiton",
+      "settings": "Paramètres Marmiton",
+      "settingsinfo": "Vous pouvez paramétrer les valeurs par defaut pour vos recherches sur marmiton. \n\nNombre de recettes recherchées. \n\nNombre de personnes par defaut. \n\nLors de l'affichage des recettes, il est possible de recalculer les ingrédients selon le nombre de personnes.",
+      "recipe": "Recette Marmiton",
+      "note": "Widget Marmiton",
+      "nbRecettes": "Nombre de recettes",
+      "nbPerson": "Nombre de personnes",
+      "save": "Sauvegarder",
+      "close": "Fermer",
+      "prev": "← Précédente",
+      "next": "Suivante →",
+      "size": "Taille de la fenêtre pour l'affichage des recettes",
+      "width": "Largeur",
+      "height": "Hauteur"
+   },
+   "askme": {
+      "question": "Qu'elle recette cherches tu ?|Que cherches tu comme recette?",
+      "questionOpenRecette": "Veux tu que j'affiche la recette|Est ce que j'affiche la recette?|Veux tu voir la recette",
+      "questionNbPerson": "Pour combien de personnes?|Donnes moi le nombre de personnes",
+      "select": "Sélectionne une recette",
+      "quit": "terminé",
+      "error": "Une erreur s'est produite|Je n'ai pas pu rechercher de recettes",
+      "noselect": "Je n'ai pas compris la selection"
+   },
+   "tts": {
+      "afficheRecette": "J'ai affiché la recette|La recette est maintenant affichée",
+      "closeRecette": "La fenêtre est maintenant fermée|J'ai fermé la fenêtre"
+   }
+}

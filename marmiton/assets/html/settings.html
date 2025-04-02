@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' ; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+
+    <script src="../../../../../node_modules/xel/xel.js" type="module"></script>
+    <meta name="xel-theme" content="../../../../../node_modules/xel/themes/adwaita-dark.css">
+    <meta name="xel-accent-color" content="blue">
+    <meta name="xel-icons" content="">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo"><img src="../images/marmiton.png">
+            <div id="label-title"></div>
+            <div id="notification" class="notification hidden"></div>
+        </div>
+
+    </header>
+
+    <main class="content">
+        <div class="container">
+            <x-card>
+                <div class="recipe">
+                    <x-box class="label-information">
+                        <x-label id="label-settingsinfo"></x-label>
+                    </x-box>
+                    <x-box>
+                        <x-label id="label-nb-recettes"></x-label>
+                        <x-numberinput id="nb-recettes" minlength=1' maxlength='10' size="small">
+                            <x-stepper></x-stepper>
+                        </x-numberinput>
+                    </x-box>
+                    <x-box>
+                        <x-label id="label-nb-person"></x-label>
+                        <x-numberinput id="nb-person" minlength=1' maxlength='100' size="small">
+                            <x-stepper></x-stepper>
+                        </x-numberinput>
+                    </x-box>
+                    <h4 id="label-size"></h4>
+                    <x-box>
+                        <x-label id="label-width"></x-label>
+                        <x-numberinput id="width" minlength=100' maxlength='500' size="small">
+                            <x-stepper></x-stepper>
+                        </x-numberinput>
+                        <x-label id="label-height"></x-label>
+                        <x-numberinput id="height" minlength=100' maxlength='500' size="small">
+                            <x-stepper></x-stepper>
+                        </x-numberinput>
+                    </x-box>
+                </div>
+
+            </x-card>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="notification-container">
+                <div id="notification" class="notification hidden"></div>
+            </div>
+        </div>
+        <div class="footer-buttons">
+            <x-button id="btn-save" class="button button-save"></x-button>
+            <x-button id="btn-close" class="button button-close"></x-button>
+        </div>
+    </footer>
+    <script src="./settings-renderer.js"></script>
+</body>
+
+</html>

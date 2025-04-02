@@ -1,0 +1,31 @@
+{
+   "label": {
+      "title": "Marmiton",
+      "settings": "Marmiton Settings",
+      "settingsinfo": "You can configure default values for your Marmiton searches. \n\nNumber of recipes to search for. \n\nDefault number of servings. \n\nWhen displaying recipes, you can recalculate ingredients based on the number of servings.",
+      "recipe": "Marmiton Recipe",
+      "note": "Marmiton Widget",
+      "nbRecettes": "Number of recipes",
+      "nbPerson": "Number of servings",
+      "save": "Save",
+      "close": "Close",
+      "prev": "← Previous",
+      "next": "Next →",
+      "size": "Window size for recipe display",
+      "width": "Width",
+      "height": "Height"
+   },
+   "askme": {
+      "question": "What recipe are you looking for?|What recipe would you like to search for?",
+      "questionOpenRecette": "Would you like me to display the recipe?|Should I show the recipe?|Do you want to see the recipe?",
+      "questionNbPerson": "For how many people?|Tell me the number of servings",
+      "select": "Select a recipe",
+      "quit": "done",
+      "error": "An error occurred|I couldn't find any recipes",
+      "noselect": "I didn't understand your selection"
+   },
+   "tts": {
+      "afficheRecette": "I've displayed the recipe|The recipe is now displayed",
+      "closeRecette": "The window is now closed|I've closed the window"
+   }
+}

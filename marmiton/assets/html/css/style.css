@@ -1,0 +1,377 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   height: 100%;
+   -webkit-app-region: drag;
+}
+
+body {
+   height: 100%;
+   font-family: 'Poppins', sans-serif;
+   font-size: 11px;
+   background-color: #1a1a1a;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   overflow-x: hidden;
+   -webkit-app-region: drag;
+}
+
+h2 {
+   font-size: 1.2rem !important;
+}
+h3 {
+   font-size: 1.1rem !important;
+}
+h4 {
+   font-size: 12px !important;
+   margin-top: 20px !important;
+   margin-bottom: 10px !important;
+}
+main {
+   flex: 1;
+   padding: 20px;
+   -webkit-app-region: no-drag;
+}
+
+form {
+   margin-top: 10px;
+   -webkit-app-region: no-drag;
+}
+
+x-box {
+   margin-top: 5px;
+   margin-left: 0;
+   margin-bottom: 5px;
+}
+
+.slider {
+   margin: 5px 10px;
+}
+
+x-select {
+   padding: 0 10px;
+}
+
+x-label {
+   font-size: 12px !important;
+}
+
+x-numberinput {
+   font-size: 12px !important;
+   margin-left: 5px !important;
+   width: 60px !important;
+   padding: 0 !important;
+   height: 25px !important;
+}
+
+x-input,
+x-input[type='text'],
+x-input[type='password'] {
+   width: 100%;
+   padding: 6px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   border-radius: 8px;
+   background-color: #333;
+   color: white;
+   font-family: 'Poppins', sans-serif;
+   font-size: 12px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   transition: all 0.3s ease;
+}
+
+x-input:hover,
+x-input[type='text']:hover,
+input[type='password']:hover {
+   border: 1px solid hsla(210, 100%, 46%, 0.753) !important;
+   background-color: #444;
+   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+x-input:focus,
+x-input[type='text']:focus,
+x-input[type='password']:focus {
+   outline: none;
+   border: 1px solid hsla(210, 100%, 46%, 0.753) !important;
+   background-color: #555;
+   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+x-input::placeholder {
+   color: #aaa;
+   font-style: italic;
+   font-size: 12px;
+}
+
+x-menuitem {
+   padding: 0 15px;
+}
+x-card {
+   -webkit-app-region: no-drag;
+}
+
+.header {
+   background-color: #ff6c1a; /* orange Marmiton */
+   padding: 0.3rem 0.6rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+   font-weight: 600;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.logo img {
+   width: 35px;
+   margin: unset !important;
+   background: unset !important;
+   border-style: unset !important;
+}
+
+.content {
+   padding: 0 0 10px 0;
+}
+
+.container {
+   /* max-width: 480px; */
+   margin: 5px 15px;
+   padding: 10px;
+   background: #1a1a1a;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.432);
+   -webkit-app-region: no-drag;
+}
+
+.recipe {
+   margin-left: 5px;
+   font-size: 12px;
+}
+.recipe-box h2 {
+   color: #ff6c1a;
+   font-weight: 600;
+   margin-right: 10px;
+}
+
+.recipe-box h3 {
+   color: #ff6c1a;
+   font-weight: 500;
+}
+.recipe-box img {
+   max-width: 99% !important;
+   margin-top: 5px !important;
+   border-radius: 5px !important;
+}
+
+footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 12px 20px;
+   background: linear-gradient(90deg, #b34b13, #ff6c1a);
+   color: white;
+   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+   -webkit-app-region: no-drag;
+}
+
+.footer-content {
+   display: flex;
+   gap: 20px;
+}
+
+.footer-buttons {
+   display: flex;
+   justify-content: flex-end;
+   gap: 10px;
+   align-items: center;
+}
+
+.container {
+   margin-top: 20px;
+}
+
+.form-group {
+   margin-bottom: 10px;
+}
+
+.detail {
+   font-size: 11px;
+}
+
+.buttons {
+   display: flex;
+   justify-content: flex-end;
+   gap: 5px;
+   margin-top: 5px;
+}
+
+.button {
+   padding: 3px 8px;
+   border: none;
+   border-radius: 8px;
+   background-color: #b34b13;
+   color: white;
+   font-family: 'Poppins', sans-serif;
+   font-size: 12px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+   background-color: #81360d;
+   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.664);
+}
+
+.button-close {
+   background-color: #b31313 !important;
+}
+
+.button-close:hover {
+   background-color: #7e0d0d !important;
+}
+
+.button-save {
+   background-color: #019608 !important;
+}
+
+.button-save:hover {
+   background-color: #006806 !important;
+}
+
+.button-prev-next {
+   background-color: #d39000 !important;
+}
+
+.button-prev-next:hover {
+   background-color: #9e6c00 !important;
+}
+
+.notification {
+   position: absolute;
+   font-weight: 500;
+   top: 23px;
+   right: 20px;
+   transform: translateY(-50%);
+   color: #fff;
+   padding: 3px 8px;
+   border-radius: 5px;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.3s ease;
+}
+
+.notification.show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.notification.hidden {
+   display: none;
+}
+
+.notification.success {
+   background-color: #b34b13;
+   border: 1px solid #81360d;
+}
+
+.notification.warning {
+   background-color: #e74c3c;
+}
+
+.notification.error {
+   background-color: #fa1010;
+}
+
+.label-information {
+   font-weight: 500;
+   font-size: 0.9em;
+   text-align: center;
+   color: #fff;
+   background-color: #0070e7;
+   border-radius: 5px;
+   border: 1px solid #fff;
+   padding: 5px;
+   margin-right: 10px;
+}
+
+.icon-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   padding: 10px;
+}
+
+.icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: transparent;
+}
+
+.icon img {
+   width: 32px;
+   height: 32px;
+   cursor: pointer;
+}
+
+.close {
+   background-color: transparent;
+}
+
+.close img {
+   margin-top: 5px;
+   width: 22px;
+   height: 22px;
+   cursor: pointer;
+   -webkit-app-region: no-drag;
+   background-color: transparent;
+}
+
+@keyframes flashUpdate {
+   0% {
+      background-color: #ff9a265e;
+   }
+   100% {
+      background-color: transparent;
+   }
+}
+
+.updated {
+   animation: flashUpdate 1.5s ease-out;
+}
+
+.recipe-box {
+   transition: transform 0.3s ease, opacity 0.3s ease;
+   will-change: transform, opacity;
+}
+
+.recipe-slide-out-left {
+   transform: translateX(-100%);
+   opacity: 0;
+}
+
+.recipe-slide-out-right {
+   transform: translateX(100%);
+   opacity: 0;
+}
+
+.recipe-slide-in-left {
+   transform: translateX(-100%);
+   opacity: 0;
+}
+
+.recipe-slide-in-right {
+   transform: translateX(100%);
+   opacity: 0;
+}

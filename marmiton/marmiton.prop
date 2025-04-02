@@ -1,0 +1,155 @@
+{
+   "modules": {
+      "marmiton": {
+         "version": "1.1.0",
+         "name": "marmiton",
+         "client": "Salon",
+         "settings": {
+            "window": {
+               "width": 430,
+               "height": 300
+            },
+            "search": {
+               "limit": 4,
+               "nbperson": 4
+            }
+         },
+         "autoRules": {
+            "description": "Do not remove! Automatic addition of rules by widget creation, automatic management"
+         },
+         "intents": {
+            "single": "rules"
+         },
+         "rules": {
+            "search": [
+               "(search|research|seek) * recipe",
+               "(search|research|seek) * /marmiton/"
+            ],
+            "close": [
+               "(close) * window /marmiton/"
+            ]
+         },
+         "widget": {
+            "display": true,
+            "autoUpdate": {
+               "delay": 30,
+               "start": false
+            },
+            "font": {
+               "status": 8,
+               "title": 12,
+               "value": 10,
+               "position": "bottom"
+            },
+            "menu": {
+               "textColor": "rgba(255, 255, 255, 1)",
+               "fillColor": "rgba(107, 101, 99, 1)",
+               "activeFillColor": "rgba(56, 255, 0, 0.75)",
+               "doubleClickTime": 1500,
+               "font": 12,
+               "radius": 80,
+               "timeOut": 7000
+            },
+            "latency": 0,
+            "latency_macro": 0,
+            "opacity": 0.7,
+            "borderWidth": 5,
+            "size": 40,
+            "color": "rgba(107, 101, 99, 1)",
+            "textColor": "rgba(255, 255, 255, 1)"
+         },
+         "numberWords": {
+            "première": 1,
+            "premier": 1,
+            "1ère": 1,
+            "1er": 1,
+            "seconde": 2,
+            "second": 2,
+            "deuxième": 2,
+            "2ème": 2,
+            "2eme": 2,
+            "troisième": 3,
+            "3ème": 3,
+            "3eme": 3,
+            "quatrième": 4,
+            "4ème": 4,
+            "4eme": 4,
+            "cinquième": 5,
+            "5ème": 5,
+            "5eme": 5,
+            "first": 1,
+            "1st": 1,
+            "2nd": 2,
+            "third": 3,
+            "3rd": 3,
+            "fourth": 4,
+            "4th": 4,
+            "fifth": 5,
+            "5th": 5,
+            "la première": 1,
+            "la premier": 1,
+            "la 1ère": 1,
+            "la 1er": 1,
+            "the first": 1,
+            "the 1st": 1,
+            "la seconde": 2,
+            "la second": 2,
+            "la deuxième": 2,
+            "la 2ème": 2,
+            "la 2eme": 2,
+            "the second": 2,
+            "the 2nd": 2,
+            "la troisième": 3,
+            "la 3ème": 3,
+            "la 3eme": 3,
+            "the third": 3,
+            "the 3rd": 3,
+            "la quatrième": 4,
+            "la 4ème": 4,
+            "la 4eme": 4,
+            "the fourth": 4,
+            "the 4th": 4,
+            "la cinquième": 5,
+            "la 5ème": 5,
+            "la 5eme": 5,
+            "the fifth": 5,
+            "the 5th": 5
+         },
+         "search": {
+            "fr": {
+               "*": "generic",
+               "annulé": "done",
+               "annuler": "done",
+               "terminé": "done",
+               "terminer": "done"
+            }
+         },
+         "openRecetteWindow": {
+            "fr": {
+               "oui": "valid",
+               "oui si tu veux": "valid",
+               "si tu veux": "valid",
+               "ok": "valid",
+               "oui merci": "valid",
+               "affiche": "valid",
+               "affiche la recette": "valid",
+               "non": "done",
+               "non merci": "done",
+               "annule": "done",
+               "annulé": "done",
+               "annuler": "done",
+               "terminé": "done",
+               "terminer": "done"
+            }
+         },
+         "askme": {
+            "noAskmeResponse": {
+               "fr-FR": "terminé|d'accord",
+               "en-EN": "completed|finished|agreed"
+            }
+         },
+         "devTools": false,
+         "active": true
+      }
+   }
+}
