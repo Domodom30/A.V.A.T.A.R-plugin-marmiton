@@ -1,10 +1,12 @@
-# Plugin Marmiton <div style="text-align: left; margin: 10px 0">
-<img src="./marmiton/assets/images/marmiton.png" width="40"/></div>
+# Plugin Marmiton 
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-marmiton)
 ![GitHub Release](https://img.shields.io/badge/version-1.1.0-green)
 ![GitHub Release Date](https://img.shields.io/badge/Release_Date-02_avril_2025-yellow)
 ![GitHub License](https://img.shields.io/github/license/Domodom30/A.V.A.T.A.R-plugin-marmiton)
+
+<div style="text-align: left; margin: 10px 0">
+<img src="./marmiton/assets/images/marmiton.png" width="40"/></div>
 
 ### 🧩 Fonctionnalités
 
