@@ -1,7 +1,7 @@
 # Plugin Marmiton
 
 <div style="text-align: left; margin: 10px 0">
-<img src="../../marmiton/assets/images/marmiton.png" width="40"/></div>
+<img src="./marmiton/assets/images/marmiton.png" width="40"/></div>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-marmiton)
 ![GitHub Release](https://img.shields.io/badge/version-1.1.0-green)
@@ -40,6 +40,8 @@ Il vous permettra de rechercher et d'afficher vos recette via marmiton.
 4. Dites : "Pour 4 personnes"
 5. Avatar proposera ensuite d'afficher ou de lire les infos de la recette.
 
+<div style="text-align: left; margin: 10px 0">
+<img src="./marmiton/assets/images/window-m.png" width="420"/></div>
 
 ## ⚙️ Installation
 
