@@ -1,6 +1,6 @@
 # Plugin WebRadio
 
-![image desc](./marmiton/assets/images/marmiton.png =150x*)
+![image desc](./marmiton/assets/images/marmiton.png =150px)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-marmiton)
 ![GitHub Release](https://img.shields.io/badge/version-1.1.0-green)
