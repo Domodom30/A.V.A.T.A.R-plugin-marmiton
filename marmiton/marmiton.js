@@ -137,7 +137,7 @@ const openMarmitonWindow = async () => {
       alwaysOnTop: false,
       show: false,
       width: 460,
-      height: 360,
+      height: 380,
       opacity: 1,
       icon: path.resolve(__dirname, 'assets', 'images', 'marmiton.png'),
       webPreferences: {

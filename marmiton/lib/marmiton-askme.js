@@ -29,67 +29,58 @@ async function askmeChercheRecette(data) {
 }
 
 async function askmeSelectRecipe(data, recettes) {
+   const askmeKeys = { '*': 'generic', ...Config.modules.marmiton.askme['selectRecipe'][data.language] };
    return new Promise((resolve) => {
-      Avatar.askme(
-         Locale.get('askme.select'),
-         data.client,
-         {
-            '*': 'generic',
-            finish: 'done',
-         },
-         15,
-         async (answer, end) => {
-            try {
-               end(data.client);
+      Avatar.askme(Locale.get('askme.select'), data.client, askmeKeys, 15, async (answer, end) => {
+         try {
+            end(data.client);
 
-               if (!answer) {
+            if (!answer) {
+               return resolve(false);
+            }
+
+            if (answer.includes('generic')) {
+               const numberWords = Config?.modules?.marmiton?.numberWords || {};
+               const userInput = answer.split(':')[1]?.trim().toLowerCase();
+
+               if (!userInput) {
+                  Avatar.speak(Locale.get('askme.noselect'), data.client);
                   return resolve(false);
                }
 
-               if (answer.includes('generic')) {
-                  const numberWords = Config?.modules?.marmiton?.numberWords || {};
-                  const userInput = answer.split(':')[1]?.trim().toLowerCase();
+               let selectionType = 'nom';
+               let selectionValue = userInput;
 
-                  if (!userInput) {
-                     Avatar.speak(Locale.get('askme.noselect'), data.client);
-                     return resolve(false);
-                  }
-
-                  let selectionType = 'nom';
-                  let selectionValue = userInput;
-
-                  if (!isNaN(userInput)) {
+               if (!isNaN(userInput)) {
+                  selectionType = 'numero';
+               } else if (numberWords[userInput]) {
+                  selectionType = 'numero';
+                  selectionValue = numberWords[userInput].toString();
+               } else if (userInput.startsWith('la ') || userInput.startsWith('the ')) {
+                  const cleanInput = userInput.substring(3);
+                  if (numberWords[cleanInput]) {
                      selectionType = 'numero';
-                  } else if (numberWords[userInput]) {
-                     selectionType = 'numero';
-                     selectionValue = numberWords[userInput].toString();
-                  } else if (userInput.startsWith('la ') || userInput.startsWith('the ')) {
-                     const cleanInput = userInput.substring(3);
-                     if (numberWords[cleanInput]) {
-                        selectionType = 'numero';
-                        selectionValue = numberWords[cleanInput].toString();
-                     }
+                     selectionValue = numberWords[cleanInput].toString();
                   }
-
-                  const selection = await marmiton.selectRecipe({ type: selectionType, valeur: selectionValue }, recettes);
-                  const nbperson = await askmeNbPerson(data);
-
-                  return resolve({ selection, nbperson });
                }
-            } catch (error) {
-               Avatar.speak(Locale.get('askme.error'), data.client);
-               resolve(false);
+
+               const selection = await marmiton.selectRecipe({ type: selectionType, valeur: selectionValue }, recettes);
+               const nbperson = await askmeNbPerson(data, recettes);
+
+               return resolve({ selection, nbperson });
             }
+         } catch (error) {
+            Avatar.speak(Locale.get('askme.error'), data.client);
+            resolve(false);
          }
-      );
+      });
    });
 }
 
 async function askmeOpenWindowRecette(data, result) {
-   const Locale = await Avatar.lang.getPak('marmiton', Config.language);
    const askmeKeys = {
       '*': 'invalid',
-      ...Config.modules.marmiton['openRecetteWindow'][data.language],
+      ...Config.modules.marmiton.askme['openRecetteWindow'][data.language],
    };
 
    return new Promise((resolve) => {
@@ -100,6 +91,12 @@ async function askmeOpenWindowRecette(data, result) {
             switch (answer) {
                case 'valid':
                   await afficheRecette(data, result);
+                  return resolve(true);
+               case 'infos':
+                  await speakInfos(data, result);
+                  return resolve(true);
+               case 'select':
+                  await enonceRecettes(data, result);
                   return resolve(true);
                case 'done':
                   Avatar.speak(Locale.get('askme.quit'), data.client);
@@ -116,70 +113,86 @@ async function askmeOpenWindowRecette(data, result) {
    });
 }
 
-async function askmeNbPerson(data) {
-   const Locale = await Avatar.lang.getPak('marmiton', Config.language);
-
+async function askmeNbPerson(data, recettes) {
+   const askmeKeys = { '*': 'generic', ...Config.modules.marmiton.askme['nbPerson'][data.language] };
    return new Promise((resolve) => {
-      Avatar.askme(
-         Locale.get('askme.questionNbPerson'),
-         data.client,
-         {
-            '*': 'generic',
-            finish: 'done',
-         },
-         15,
-         async (answer, end) => {
-            try {
-               end(data.client);
+      Avatar.askme(Locale.get('askme.questionNbPerson'), data.client, askmeKeys, 15, async (answer, end) => {
+         try {
+            end(data.client);
 
-               if (answer.includes('generic')) {
-                  const userInput = answer.split(':')[1];
-                  const match = userInput.match(/\d+/);
+            if (answer.includes('generic')) {
+               const userInput = answer.split(':')[1];
+               const match = userInput.match(/\d+/);
 
-                  if (match) {
-                     const numberperson = parseInt(match[0], 10);
-                     return resolve(numberperson);
-                  } else {
-                     Avatar.speak(Locale.get('askme.noselect'), data.client);
-                     return resolve(Config.modules.marmiton.settings.search.nbperson);
-                  }
+               if (match) {
+                  const numberperson = parseInt(match[0], 10);
+
+                  return resolve(numberperson);
                } else {
-                  switch (answer) {
-                     case 'done':
-                        Avatar.speak(Locale.get('askme.quit'), data.client);
-                        return resolve(false);
-                     case 'invalid':
-                     default:
-                        Avatar.speak(Locale.get('askme.error'), data.client);
-                        return resolve(false);
-                  }
+                  Avatar.speak(Locale.get('askme.noselect'), data.client);
+                  return resolve(Config.modules.marmiton.settings.search.nbperson);
                }
-            } catch {
-               resolve(false);
+            } else {
+               switch (answer) {
+                  case 'done':
+                     Avatar.speak(Locale.get('askme.quit'), data.client);
+                     return resolve(false);
+                  case 'select':
+                     await enonceRecettes(data, recettes);
+                     return resolve(true);
+                  case 'invalid':
+                  default:
+                     Avatar.speak(Locale.get('askme.error'), data.client);
+                     return resolve(false);
+               }
             }
+         } catch {
+            resolve(false);
          }
-      );
+      });
    });
 }
 
 async function enonceRecettes(data, recettes) {
    return new Promise((resolve) => {
       let liste = '';
-      for (let i = 0; i < recettes.length; i++) {
-         const element = recettes[i].title;
-         liste += element + '. ';
-      }
-      liste = liste.slice(0, -2);
+      const category = recettes[0]?.category || '';
 
-      Avatar.speak(liste, data.client, async () => {
-         try {
-            let result = await askmeSelectRecipe(data, recettes);
-            result = await marmiton.calculRecettesNbPerson(result.selection, result.nbperson);
-            await askmeOpenWindowRecette(data, result);
-            return resolve(result);
-         } catch (err) {
-            return resolve(false);
-         }
+      Promise.all(
+         recettes.map(async (recette, i) => {
+            const numero = i + 1;
+            const msg = (await Locale.get(['tts.number', numero])) + '. ' + recette.title + '. ';
+            return msg;
+         })
+      ).then(async (messages) => {
+         liste = messages.join('');
+         const msg1 = (await Locale.get(['tts.findRecipe', recettes.length, category])) + '. ';
+         Avatar.speak(msg1 + liste, data.client, async () => {
+            try {
+               const result = await askmeSelectRecipe(data, recettes);
+               const results = await marmiton.calculRecettesNbPerson(result.selection, result.nbperson);
+               await askmeOpenWindowRecette(data, results);
+               return resolve(results);
+            } catch (err) {
+               await Avatar.speak(await Locale.get('tts.error'), data.client);
+               return resolve(false);
+            }
+         });
+      });
+   });
+}
+
+async function speakInfos(data, recettes) {
+   const recette = recettes[0];
+   const ttsInfos = await Locale.get(['tts.infosRecipe', recette.title, recette.prepTime, recette.cookTime, recette.totalTime, recette.rating]);
+   const ttsInfosIngredients = await Locale.get(['tts.infosIngredients', recette.yield, recette.ingredients]);
+
+   return new Promise((resolve) => {
+      Avatar.speak(ttsInfos, data.client, false, () => {
+         Avatar.speak(ttsInfosIngredients, data.client, false, async () => {
+            const result = await askmeOpenWindowRecette(data, recettes);
+            resolve(result);
+         });
       });
    });
 }

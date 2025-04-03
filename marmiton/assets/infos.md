@@ -1,23 +1,31 @@
-# Marmiton
+# **Marmiton Plugin**  
 
-This plugin is an add-on for the [Avatar](https://github.com/Avatar-Home-Automation/A.V.A.T.A.R-Server) framework.
+This plugin is an add-on module for the **Avatar framework**, designed to help users discover and manage cooking recipes with ease.  
 
-![Marmiton](../../core/plugins/marmiton/assets/images/marmiton.png =150x*)
+![Marmiton](../../core/plugins/marmiton/assets/images/marmiton.png =150x*)  
 
-## ★ Key Features
-The marmiton plugin offers:
+## 🧩 **Key Features**  
+The Marmiton plugin offers:  
+- **Search for recipes** (e.g., "Tartiflette")  
+- **Select the number of servings**  
+- **Display recipes on a client**  
+- **Browse related recipes**  
+- **Adjust ingredient proportions**  
 
-- Search for a recipe
-- Select the number of people
-- Display the recipe to a client.
-- View other recipes matching your search.
-- Change the proportions.
+## 🖥️ **New Features**  
+- **Fixed proportion calculations** for accurate ingredient scaling.  
+- **Voice-assisted recipe details** – Avatar can now read out preparation time and ingredient lists.  
+- **Flexible navigation** – Return to recipe selection at any point during interaction.  
 
-## ★★ Example
-Avatar will then ask you which recipe to search for.
-Say: "Tartiflette"
+## 🛠️ **Settings Panel**  
+- **Customize default settings**:  
+  - Number of recipes displayed per search.  
+  - Default serving size.  
+- **Adjust window dimensions** for optimal recipe display.  
 
-Avatar will ask you for the number of servings.
-Say: "For 4 people"
-
-Avatar will then offer to display the recipe.
+## ⏳ **Example Usage**  
+1. Avatar asks which recipe you want to search for.  
+2. Say: *"Tartiflette"*  
+3. Avatar asks for the number of servings.  
+4. Say: *"For 4 people"*  
+5. Avatar then offers to **display** or **read out** the recipe details.  

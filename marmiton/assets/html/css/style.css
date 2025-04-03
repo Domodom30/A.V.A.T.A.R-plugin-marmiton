@@ -1,3 +1,8 @@
+/* Import des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
 * {
    margin: 0;
    padding: 0;
@@ -13,6 +18,7 @@ body {
    height: 100%;
    font-family: 'Poppins', sans-serif;
    font-size: 11px;
+   font-weight: 400;
    background-color: #1a1a1a;
    color: white;
    display: flex;
@@ -116,7 +122,7 @@ x-card {
 }
 
 .header {
-   background-color: #ff6c1a; /* orange Marmiton */
+   background-color: #ff6f61;
    padding: 0.3rem 0.6rem;
    display: flex;
    justify-content: space-between;
@@ -155,20 +161,21 @@ x-card {
 .recipe {
    margin-left: 5px;
    font-size: 12px;
+   font-weight: 400 !important;
 }
 .recipe-box h2 {
-   color: #ff6c1a;
+   color: #ff6f61;
    font-weight: 600;
    margin-right: 10px;
 }
 
 .recipe-box h3 {
-   color: #ff6c1a;
+   color: #ff6f61;
    font-weight: 500;
 }
 .recipe-box img {
-   max-width: 98% !important;
-   margin-top: 5px !important;
+   max-width: 96% !important;
+   margin: 5px 5px !important;
    border-radius: 5px !important;
 }
 
@@ -177,7 +184,7 @@ footer {
    justify-content: space-between;
    align-items: center;
    padding: 12px 20px;
-   background: linear-gradient(90deg, #b34b13, #ff6c1a);
+   background: linear-gradient(90deg, #ff6f61, #ff6e61d7);
    color: white;
    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
    -webkit-app-region: no-drag;
@@ -218,7 +225,7 @@ footer {
    padding: 3px 8px;
    border: none;
    border-radius: 8px;
-   background-color: #b34b13;
+   background-color: #ff6f61;
    color: white;
    font-family: 'Poppins', sans-serif;
    font-size: 12px;
@@ -228,7 +235,7 @@ footer {
 }
 
 .button:hover {
-   background-color: #81360d;
+   background-color: #fc5849;
    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.664);
 }
 
@@ -249,11 +256,11 @@ footer {
 }
 
 .button-prev-next {
-   background-color: #d39000 !important;
+   background-color: #bd5f56 !important;
 }
 
 .button-prev-next:hover {
-   background-color: #9e6c00 !important;
+   background-color: #a54d45 !important;
 }
 
 .notification {
@@ -280,8 +287,8 @@ footer {
 }
 
 .notification.success {
-   background-color: #b34b13;
-   border: 1px solid #81360d;
+   background-color: #ff6f61;
+   border: 1px solid #fd594a;
 }
 
 .notification.warning {
@@ -340,7 +347,7 @@ footer {
 
 @keyframes flashUpdate {
    0% {
-      background-color: #ff9a265e;
+      background-color: hsla(5, 100%, 69%, 0.61);
    }
    100% {
       background-color: transparent;

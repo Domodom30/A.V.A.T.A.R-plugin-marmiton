@@ -23,10 +23,9 @@ async function scrapeRecipeList(keyword) {
    if (!itemList) return;
 
    return itemList.itemListElement.map((item) => ({
+      position: item.position || null,
       url: item.url || null,
-      image: cleanImageUrl(item.image?.pictureUrls?.origin) || null,
-      thumb: cleanImageUrl(item.image?.pictureUrls?.thumb) || null,
-      position: item.position ?? null,
+      image: cleanImageUrl(item.image.pictureUrls.origin) || null,
    }));
 }
 
@@ -53,7 +52,7 @@ async function scrapeRecipePage(url) {
 async function scrapeFullRecipes(keyword, servings) {
    const limit = Config.modules.marmiton.settings.search.limit;
    const list = await scrapeRecipeList(keyword);
-   if (!servings) servings = 4; // nombre de personnes souhaité
+   if (!servings) servings = Config.modules.marmiton.settings.search.nbperson;
 
    const results = [];
 
@@ -67,10 +66,13 @@ async function scrapeFullRecipes(keyword, servings) {
       const yieldText = yieldMatch ? yieldMatch[2].trim() : null;
 
       if (!recipe) continue;
+
       // La partie adjust reste a voir, pose des probleme lors des calculs dans la windowRecette
       results.push({
          position,
          url,
+         type: recipe.recipeCuisine,
+         category: recipe.recipeCategory,
          title: recipe.name,
          image: image || (Array.isArray(recipe.image) ? recipe.image[0] : recipe.image),
          yield: recipe.recipeYield,
@@ -216,16 +218,8 @@ async function calculRecettesNbPerson(recettes, nbperson) {
    });
 }
 
-// Il faudra verifier cela ulterieurement
 function cleanImageUrl(url) {
-   if (typeof url !== 'string' || !url.trim()) return null;
-
-   const match = url.match(/(_origin)[^\.]*(\.\w{3,4})(\?.*)?$/);
-   if (match) {
-      return url.replace(/(_origin)[^\.]*(\.\w{3,4})(\?.*)?$/, '$1$2');
-   }
-   if (url.startsWith('http')) return url;
-   return null;
+   return url.replace(/(_origin)[^\.]*(\.\w{3,4})$/, '$1$2');
 }
 
 function formatDuration(iso) {

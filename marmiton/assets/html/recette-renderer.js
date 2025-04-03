@@ -31,7 +31,7 @@ async function showRecipe(recipe, direction = 'right') {
    labelTitle.textContent = recipe.title;
 
    const html = `
-       ${recipe.image ? `<img src="${recipe.image}" style="max-width: 100%; margin-bottom: 10px;" />` : ''}
+       ${recipe.image ? `<img src="${recipe.image}"/>` : ''}
        <p>
          <x-box><strong>Pour : </strong> <span id="person-count"> ${recipe.adjustedYield}</span>
          <x-numberinput id="person-input" value="${recipe.adjustedYieldNumber}"><x-stepper></x-stepper></x-numberinput></x-box>
@@ -42,10 +42,10 @@ async function showRecipe(recipe, direction = 'right') {
        <p><strong>Note :</strong> ${recipe.rating || 'N/A'} ⭐ (${recipe.ratingCount || 0} avis)</p>
 
        <h3>🧂 Ingrédients</h3>
-       <ul id="ingredients-list">${recipe.adjustedIngredients.map((i) => `<li>${i}</li>`).join('')}</ul>
+       <ul id="ingredients-list">${recipe.adjustedIngredients.map((i) => `<li>${i}</li>`).join(' ')}</ul>
 
        <h3>👨‍🍳 Préparation</h3>
-       <ol>${recipe.instructions.map((i) => `<li>${i}</li>`).join('')}</ol>
+       <ol>${recipe.instructions.map((i) => `<li>${i}</li>`).join(' ')}</ol>
    `;
 
    const box = document.createElement('div');
@@ -77,7 +77,7 @@ async function showRecipe(recipe, direction = 'right') {
 
             const matching = updated.find((r) => r.title === recipe.title);
             if (matching) {
-               ingredientsList.innerHTML = matching.adjustedIngredients.map((i) => `<li class="updated">${i}</li>`).join('');
+               ingredientsList.innerHTML = matching.adjustedIngredients.map((i) => `<li class="updated">${i}</li>`).join(' ');
 
                personCount.textContent = newYield + ` ${recipe.yieldText}`;
                ingredientsList.querySelectorAll('li').forEach((li) => {
@@ -128,7 +128,6 @@ btnNext.addEventListener('click', async () => {
    }
 });
 
-// Chargement initial
 window.electronAPI.onInitMarmiton(async (config, recettes) => {
    await setTargets(config);
    allRecipes = recettes;

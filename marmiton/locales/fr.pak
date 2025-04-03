@@ -17,7 +17,7 @@
    },
    "askme": {
       "question": "Qu'elle recette cherches tu ?|Que cherches tu comme recette?",
-      "questionOpenRecette": "Veux tu que j'affiche la recette|Est ce que j'affiche la recette?|Veux tu voir la recette",
+      "questionOpenRecette": "Je peux t'afficher la recette ou te donner les informations principales",
       "questionNbPerson": "Pour combien de personnes?|Donnes moi le nombre de personnes",
       "select": "Sélectionne une recette",
       "quit": "terminé",
@@ -26,6 +26,11 @@
    },
    "tts": {
       "afficheRecette": "J'ai affiché la recette|La recette est maintenant affichée",
-      "closeRecette": "La fenêtre est maintenant fermée|J'ai fermé la fenêtre"
+      "closeRecette": "La fenêtre est maintenant fermée|J'ai fermé la fenêtre",
+      "number": "En $$",
+      "infosRecipe": "$$, Temps préparation $$, temps de cuisson $$, soit un total de $$, notée à $$ sur 5.",
+      "infosIngredients": "Pour $$, il te faudra $$",
+      "findRecipe": "Je te propose $$ recettes pour $$|j'ai trouvé $$ recettes correspondantes à $$||j'ai $$ recettes qui correspondent pour $$",
+      "error": "Une erreur s'est produite|Je n'ai pas pu trouver de recettes"
    }
 }

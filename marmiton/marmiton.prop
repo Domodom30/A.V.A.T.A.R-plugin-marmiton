@@ -1,13 +1,13 @@
 {
    "modules": {
       "marmiton": {
-         "version": "1.1.0",
+         "version": "1.2.0",
          "name": "marmiton",
          "client": "Salon",
          "settings": {
             "window": {
                "width": 430,
-               "height": 300
+               "height": 400
             },
             "search": {
                "limit": 2,
@@ -26,7 +26,7 @@
                "(search|research|seek) recipe"
             ],
             "close": [
-               "(close) * window /marmiton/"
+               "(close) * window * recipe"
             ]
          },
          "widget": {
@@ -124,28 +124,73 @@
                "terminer": "done"
             }
          },
-         "openRecetteWindow": {
-            "fr": {
-               "oui": "valid",
-               "oui si tu veux": "valid",
-               "si tu veux": "valid",
-               "ok": "valid",
-               "oui merci": "valid",
-               "affiche": "valid",
-               "affiche la recette": "valid",
-               "non": "done",
-               "non merci": "done",
-               "annule": "done",
-               "annulé": "done",
-               "annuler": "done",
-               "terminé": "done",
-               "terminer": "done"
-            }
-         },
          "askme": {
             "noAskmeResponse": {
                "fr-FR": "terminé|d'accord",
                "en-EN": "completed|finished|agreed"
+            },
+            "nbPerson": {
+               "fr": {
+                  "*": "generic",
+                  "non": "done",
+                  "non merci": "done",
+                  "annule": "done",
+                  "annulé": "done",
+                  "annuler": "done",
+                  "terminé": "done",
+                  "terminer": "done",
+                  "quitte": "done",
+                  "quitter": "done"
+               }
+            },
+            "selectRecipe": {
+               "fr": {
+                  "*": "generic",
+                  "annule": "done",
+                  "annulé": "done",
+                  "annuler": "done",
+                  "terminé": "done",
+                  "terminer": "done",
+                  "quitte": "done",
+                  "quitter": "done"
+               }
+            },
+            "openRecetteWindow": {
+               "fr": {
+                  "oui": "valid",
+                  "oui si tu veux": "valid",
+                  "si tu veux": "valid",
+                  "ok": "valid",
+                  "oui merci": "valid",
+                  "Tu peux m'afficher la recettte?": "valid",
+                  "Je veux visualiser la recette": "valid",
+                  "Je veux voir la recette": "valid",
+                  "affiche": "valid",
+                  "affiches la recette": "valid",
+                  "affiches moi la recette": "valid",
+                  "donnes moi les infos de base de la recette": "infos",
+                  "donnes moi les infos de base pour la recette": "infos",
+                  "donnes moi les infos de base pour cette recette": "infos",
+                  "donnes moi les infos": "infos",
+                  "donnes moi les infos pour cette recette": "infos",
+                  "donnes moi les infos principales": "infos",
+                  "donnes les infos de base de la recette": "infos",
+                  "donnes les infos de base pour la recette": "infos",
+                  "donnes les infos de base pour cette recette": "infos",
+                  "donnes les infos": "infos",
+                  "donnes les infos pour cette recette": "infos",
+                  "donnes les infos principales": "infos",
+                  "retour à la selection": "select",
+                  "retourne à la selection": "select",
+                  "retourner à la selection": "select",
+                  "non": "done",
+                  "non merci": "done",
+                  "annule": "done",
+                  "annulé": "done",
+                  "annuler": "done",
+                  "terminé": "done",
+                  "terminer": "done"
+               }
             }
          },
          "devTools": false,

@@ -1,9 +1,9 @@
 {
   "name": "marmiton",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "Plugin marmiton for A.V.A.T.A.R",
-  "repository": "https://github.com/Domodom30/",
+  "repository": "https://github.com/Domodom30/A.V.A.T.A.R-plugin-marmiton",
   "keywords": [
     "marmiton"
   ],
