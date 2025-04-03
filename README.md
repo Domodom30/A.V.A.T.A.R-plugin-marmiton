@@ -1,7 +1,7 @@
 # Plugin Marmiton
 
 <div style="text-align: left; margin: 10px 0">
-<img src="../../core/plugins/marmiton/assets/images/marmiton.png" width="40"/></div>
+<img src="../../marmiton/assets/images/marmiton.png" width="40"/></div>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Domodom30/A.V.A.T.A.R-plugin-marmiton)
 ![GitHub Release](https://img.shields.io/badge/version-1.1.0-green)
